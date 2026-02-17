@@ -1,0 +1,1328 @@
+{
+  "info": {
+    "name": "vef2-2026-v3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "authors",
+      "item": [
+        {
+          "name": "GET /authors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/authors",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /authors",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/authors",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "643"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 15 Feb 2026 11:03:02 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"name\": \"Kúltúrfrétta Kata\",\n            \"email\": \"kata@example.org\",\n            \"createdAt\": \"2026-02-08T12:34:52.137Z\",\n            \"updatedAt\": \"2026-02-08T12:34:52.137Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Æsifrétta Óttar\",\n            \"email\": \"ottar@example.com\",\n            \"createdAt\": \"2026-02-08T12:34:52.135Z\",\n            \"updatedAt\": \"2026-02-08T12:34:52.135Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Frétta Fanney\",\n            \"email\": \"fanney@example.net\",\n            \"createdAt\": \"2026-02-08T12:34:52.132Z\",\n            \"updatedAt\": \"2026-02-08T12:34:52.132Z\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Friðrik Fréttaritari\",\n            \"email\": \"fridrik@example.org\",\n            \"createdAt\": \"2026-02-08T12:34:52.125Z\",\n            \"updatedAt\": \"2026-02-08T12:34:52.125Z\"\n        }\n    ],\n    \"pagination\": {\n        \"total\": 4,\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 4\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /author?limit=X&skip=Y",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/authors?limit=1&skip=1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "1"
+                },
+                {
+                  "key": "skip",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /author?limit=X&skip=Y",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/authors?limit=1&skip=1",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "210"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:14:48 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 9,\n            \"name\": \"Kúltúrfrétta Kata\",\n            \"email\": \"kata@example.org\",\n            \"createdAt\": \"2026-02-17T20:00:51.025Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.025Z\"\n        }\n    ],\n    \"pagination\": {\n        \"total\": 4,\n        \"limit\": 1,\n        \"offset\": 0,\n        \"count\": 1\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /author?limit=X&skip=Y Invalid",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/authors?limit=a&skip=b",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "a"
+                },
+                {
+                  "key": "skip",
+                  "value": "b"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /author?limit=X&skip=Y Invalid",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/authors?limit=a&skip=b",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "a"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "b"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "68"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:18:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errors\": [\n        {\n            \"path\": \"limit\",\n            \"message\": \"Must be a positive integer\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /authors/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/authors/1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /authors/:id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/authors/1",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "148"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 15 Feb 2026 11:05:14 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"name\": \"Friðrik Fréttaritari\",\n    \"email\": \"fridrik@example.org\",\n    \"createdAt\": \"2026-02-08T12:34:52.125Z\",\n    \"updatedAt\": \"2026-02-15T11:05:00.338Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /authors/:id invalid id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/authors/asdf",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors",
+                "asdf"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /authors/:id invalid id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/authors/asdf",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors",
+                    "asdf"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "83"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:13:26 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errors\": [\n        {\n            \"path\": \"id\",\n            \"message\": \"Invalid input: expected number, received NaN\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "PATCH /authors/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Friðrika Fréttaritari\",\n    \"email\": \"fridrika@example.org\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/authors/5",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors",
+                "5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "PATCH /authors/:id",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Friðrika Fréttaritari\",\n    \"email\": \"fridrika@example.org\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/authors/1",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "150"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 15 Feb 2026 11:05:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"name\": \"Friðrika Fréttaritari\",\n    \"email\": \"fridrika@example.org\",\n    \"createdAt\": \"2026-02-08T12:34:52.125Z\",\n    \"updatedAt\": \"2026-02-15T11:05:24.435Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "PATCH /authors/:id Invalid",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"\",\n    \"email\": \"test@\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/authors/1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "PATCH /authors/:id Invalid",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"\",\n    \"email\": \"test@\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/authors/1",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors",
+                    "1"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "141"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:06:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errors\": [\n        {\n            \"path\": \"name\",\n            \"message\": \"Too small: expected string to have >=1 characters\"\n        },\n        {\n            \"path\": \"email\",\n            \"message\": \"Invalid email address\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST /authors",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Test\",\n    \"email\": \"test@example.org\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/authors",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "POST /authors/",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test\",\n    \"email\": \"test@example.org\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/authors",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "127"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 15 Feb 2026 11:08:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 5,\n    \"name\": \"Test\",\n    \"email\": \"test@example.org\",\n    \"createdAt\": \"2026-02-15T11:08:57.487Z\",\n    \"updatedAt\": \"2026-02-15T11:08:57.487Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE /authors/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/authors/5",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors",
+                "5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "DELETE /authors/:id",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/authors/5",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors",
+                    "5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "28"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 15 Feb 2026 11:09:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"author deleted\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST /authors Invalid",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"\",\n    \"email\": \"test@\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/authors",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "authors"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "POST /authors Invalid",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"\",\n    \"email\": \"test@\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/authors",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "authors"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "141"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:06:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errors\": [\n        {\n            \"path\": \"name\",\n            \"message\": \"Too small: expected string to have >=1 characters\"\n        },\n        {\n            \"path\": \"email\",\n            \"message\": \"Invalid email address\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "news",
+      "item": [
+        {
+          "name": "GET /news",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/news",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "news"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /news",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/news",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "news"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "8518"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:16:28 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 18,\n            \"title\": \"Dolorem Eum\",\n            \"slug\": \"dolorem-eum\",\n            \"intro\": \"Fugiat quo voluptas nulla pariatur. Excepteur sint occaecat cupidatat non proident.\",\n            \"content\": \"Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi. Id est laborum et dolorum fuga et harum quidem rerum facilis est.\",\n            \"published\": false,\n            \"authorId\": 9,\n            \"createdAt\": \"2026-02-17T20:00:51.053Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.053Z\",\n            \"author\": {\n                \"id\": 9,\n                \"name\": \"Kúltúrfrétta Kata\",\n                \"email\": \"kata@example.org\",\n                \"createdAt\": \"2026-02-17T20:00:51.025Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.025Z\"\n            }\n        },\n        {\n            \"id\": 17,\n            \"title\": \"Sed quia non numquam eius\",\n            \"slug\": \"sed-quia-non-numquam-eius\",\n            \"intro\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.\",\n            \"content\": \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.\",\n            \"published\": true,\n            \"authorId\": 9,\n            \"createdAt\": \"2026-02-17T20:00:51.052Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.052Z\",\n            \"author\": {\n                \"id\": 9,\n                \"name\": \"Kúltúrfrétta Kata\",\n                \"email\": \"kata@example.org\",\n                \"createdAt\": \"2026-02-17T20:00:51.025Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.025Z\"\n            }\n        },\n        {\n            \"id\": 16,\n            \"title\": \"Vel Illum Qui Dolorem Eum\",\n            \"slug\": \"vel-illum-qui-dolorem-eum\",\n            \"intro\": \"Fugiat quo voluptas nulla pariatur. Excepteur sint occaecat cupidatat non proident.\",\n            \"content\": \"Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi. Id est laborum et dolorum fuga et harum quidem rerum facilis est.\",\n            \"published\": false,\n            \"authorId\": 9,\n            \"createdAt\": \"2026-02-17T20:00:51.051Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.051Z\",\n            \"author\": {\n                \"id\": 9,\n                \"name\": \"Kúltúrfrétta Kata\",\n                \"email\": \"kata@example.org\",\n                \"createdAt\": \"2026-02-17T20:00:51.025Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.025Z\"\n            }\n        },\n        {\n            \"id\": 15,\n            \"title\": \"Nemo Enim Ipsam Voluptatem\",\n            \"slug\": \"nemo-enim-ipsam-voluptatem\",\n            \"intro\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.\",\n            \"content\": \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.\",\n            \"published\": true,\n            \"authorId\": 9,\n            \"createdAt\": \"2026-02-17T20:00:51.047Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.047Z\",\n            \"author\": {\n                \"id\": 9,\n                \"name\": \"Kúltúrfrétta Kata\",\n                \"email\": \"kata@example.org\",\n                \"createdAt\": \"2026-02-17T20:00:51.025Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.025Z\"\n            }\n        },\n        {\n            \"id\": 14,\n            \"title\": \"Hanc Ego Cum Teneam\",\n            \"slug\": \"hanc-ego-cum-teneam\",\n            \"intro\": \"Sed ut tum ad senem senex de senectute, sic hoc libro ad amicum amicissimus scripsi de amicitia.\",\n            \"content\": \"Hanc ego cum teneam sententiam, quid est cur verear, ne ad eam non possim accommodare Torquatos nostros? quos tu paulo ante cum memoriter, tum etiam erga nos amice et benivole collegisti, nec me tamen laudandis maioribus meis corrupisti nec segniorem ad respondendum reddidisti. Quorum facta quem ad modum, quaeso, interpretaris? sicine eos censes aut in armatum hostem impetum fecisse aut in liberos atque in sanguinem suum tam crudelis fuisse.\",\n            \"published\": true,\n            \"authorId\": 8,\n            \"createdAt\": \"2026-02-17T20:00:51.046Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.046Z\",\n            \"author\": {\n                \"id\": 8,\n                \"name\": \"Æsifrétta Óttar\",\n                \"email\": \"ottar@example.com\",\n                \"createdAt\": \"2026-02-17T20:00:51.024Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.024Z\"\n            }\n        },\n        {\n            \"id\": 13,\n            \"title\": \"Temporibus Autem Quibusdam\",\n            \"slug\": \"temporibus-autem-quibusdam\",\n            \"intro\": \"Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.\",\n            \"content\": \"Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.\",\n            \"published\": true,\n            \"authorId\": 8,\n            \"createdAt\": \"2026-02-17T20:00:51.045Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.045Z\",\n            \"author\": {\n                \"id\": 8,\n                \"name\": \"Æsifrétta Óttar\",\n                \"email\": \"ottar@example.com\",\n                \"createdAt\": \"2026-02-17T20:00:51.024Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.024Z\"\n            }\n        },\n        {\n            \"id\": 12,\n            \"title\": \"Quis Autem Vel Eum\",\n            \"slug\": \"quis-autem-vel-eum\",\n            \"intro\": \"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.\",\n            \"content\": \"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.\",\n            \"published\": false,\n            \"authorId\": 7,\n            \"createdAt\": \"2026-02-17T20:00:51.043Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.043Z\",\n            \"author\": {\n                \"id\": 7,\n                \"name\": \"Frétta Fanney\",\n                \"email\": \"fanney@example.net\",\n                \"createdAt\": \"2026-02-17T20:00:51.023Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.023Z\"\n            }\n        },\n        {\n            \"id\": 11,\n            \"title\": \"Adipiscing Elit\",\n            \"slug\": \"adipiscing-elit\",\n            \"intro\": \"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\",\n            \"content\": \"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.\",\n            \"published\": true,\n            \"authorId\": 6,\n            \"createdAt\": \"2026-02-17T20:00:51.042Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.042Z\",\n            \"author\": {\n                \"id\": 6,\n                \"name\": \"Friðrik Fréttaritari\",\n                \"email\": \"fridrik@example.org\",\n                \"createdAt\": \"2026-02-17T20:00:51.016Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.016Z\"\n            }\n        },\n        {\n            \"id\": 10,\n            \"title\": \"Consectetur Adipiscing Elit\",\n            \"slug\": \"consectetur-adipiscing-elit\",\n            \"intro\": \"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\",\n            \"content\": \"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.\",\n            \"published\": true,\n            \"authorId\": 6,\n            \"createdAt\": \"2026-02-17T20:00:51.040Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.040Z\",\n            \"author\": {\n                \"id\": 6,\n                \"name\": \"Friðrik Fréttaritari\",\n                \"email\": \"fridrik@example.org\",\n                \"createdAt\": \"2026-02-17T20:00:51.016Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.016Z\"\n            }\n        },\n        {\n            \"id\": 9,\n            \"title\": \"Sit Amet\",\n            \"slug\": \"sit-amet\",\n            \"intro\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.\",\n            \"content\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n            \"published\": true,\n            \"authorId\": 6,\n            \"createdAt\": \"2026-02-17T20:00:51.033Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.033Z\",\n            \"author\": {\n                \"id\": 6,\n                \"name\": \"Friðrik Fréttaritari\",\n                \"email\": \"fridrik@example.org\",\n                \"createdAt\": \"2026-02-17T20:00:51.016Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.016Z\"\n            }\n        }\n    ],\n    \"pagination\": {\n        \"total\": 11,\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 10\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /newspublished=true&authorId=:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/news",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "news"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /newspublished=true&authorId=:id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/news?authorId=9&published=true",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "news"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorId",
+                      "value": "9"
+                    },
+                    {
+                      "key": "published",
+                      "value": "true"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1845"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:35:06 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 17,\n            \"title\": \"Sed quia non numquam eius\",\n            \"slug\": \"sed-quia-non-numquam-eius\",\n            \"intro\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.\",\n            \"content\": \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.\",\n            \"published\": true,\n            \"authorId\": 9,\n            \"createdAt\": \"2026-02-17T20:00:51.052Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.052Z\",\n            \"author\": {\n                \"id\": 9,\n                \"name\": \"Kúltúrfrétta Kata\",\n                \"email\": \"kata@example.org\",\n                \"createdAt\": \"2026-02-17T20:00:51.025Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.025Z\"\n            }\n        },\n        {\n            \"id\": 15,\n            \"title\": \"Nemo Enim Ipsam Voluptatem\",\n            \"slug\": \"nemo-enim-ipsam-voluptatem\",\n            \"intro\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.\",\n            \"content\": \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.\",\n            \"published\": true,\n            \"authorId\": 9,\n            \"createdAt\": \"2026-02-17T20:00:51.047Z\",\n            \"updatedAt\": \"2026-02-17T20:00:51.047Z\",\n            \"author\": {\n                \"id\": 9,\n                \"name\": \"Kúltúrfrétta Kata\",\n                \"email\": \"kata@example.org\",\n                \"createdAt\": \"2026-02-17T20:00:51.025Z\",\n                \"updatedAt\": \"2026-02-17T20:00:51.025Z\"\n            }\n        }\n    ],\n    \"pagination\": {\n        \"total\": 2,\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 2\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /news/:slug",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/news/sit-amet",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "news",
+                "sit-amet"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /news/:slug",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/news/sit-amet",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "news",
+                    "sit-amet"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "844"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:16:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 9,\n    \"title\": \"Sit Amet\",\n    \"slug\": \"sit-amet\",\n    \"intro\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.\",\n    \"content\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n    \"published\": true,\n    \"authorId\": 6,\n    \"createdAt\": \"2026-02-17T20:00:51.033Z\",\n    \"updatedAt\": \"2026-02-17T20:00:51.033Z\",\n    \"author\": {\n        \"id\": 6,\n        \"name\": \"Friðrik Fréttaritari\",\n        \"email\": \"fridrik@example.org\",\n        \"createdAt\": \"2026-02-17T20:00:51.016Z\",\n        \"updatedAt\": \"2026-02-17T20:00:51.016Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "PATCH /news/:slug",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 9,\n    \"title\": \"Sit Amet\",\n    \"slug\": \"sit-amet\",\n    \"intro\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.\",\n    \"content\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n    \"published\": false,\n    \"authorId\": 9\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/news/sit-amet",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "news",
+                "sit-amet"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "PATCH /news/:slug",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": 9,\n    \"title\": \"Sit Amet\",\n    \"slug\": \"sit-amet\",\n    \"intro\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.\",\n    \"content\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n    \"published\": false,\n    \"authorId\": 9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/news/sit-amet",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "news",
+                    "sit-amet"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "840"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:17:31 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 9,\n    \"title\": \"Sit Amet\",\n    \"slug\": \"sit-amet\",\n    \"intro\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.\",\n    \"content\": \"Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n    \"published\": false,\n    \"authorId\": 9,\n    \"createdAt\": \"2026-02-17T20:00:51.033Z\",\n    \"updatedAt\": \"2026-02-17T20:17:31.478Z\",\n    \"author\": {\n        \"id\": 9,\n        \"name\": \"Kúltúrfrétta Kata\",\n        \"email\": \"kata@example.org\",\n        \"createdAt\": \"2026-02-17T20:00:51.025Z\",\n        \"updatedAt\": \"2026-02-17T20:00:51.025Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST /news",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 9,\n    \"title\": \"Foo bar\",\n    \"intro\": \"Foo.\",\n    \"content\": \"Bar\",\n    \"published\": false,\n    \"authorId\": 9\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/news",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "news"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "POST /news",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": 9,\n    \"title\": \"Foo bar\",\n    \"intro\": \"Foo.\",\n    \"content\": \"Bar\",\n    \"published\": false,\n    \"authorId\": 9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/news",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "news"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "337"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:19:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 19,\n    \"title\": \"Foo bar\",\n    \"slug\": \"foo-bar\",\n    \"intro\": \"Foo.\",\n    \"content\": \"Bar\",\n    \"published\": false,\n    \"authorId\": 9,\n    \"createdAt\": \"2026-02-17T20:19:43.011Z\",\n    \"updatedAt\": \"2026-02-17T20:19:43.011Z\",\n    \"author\": {\n        \"id\": 9,\n        \"name\": \"Kúltúrfrétta Kata\",\n        \"email\": \"kata@example.org\",\n        \"createdAt\": \"2026-02-17T20:00:51.025Z\",\n        \"updatedAt\": \"2026-02-17T20:00:51.025Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE /news/:slug",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/news/sit-amet",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "news",
+                "sit-amet"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "DELETE /news/:slug",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/news/sit-amet",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "news",
+                    "sit-amet"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "26"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 20:20:29 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"news deleted\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GET /",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET /",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "343"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 15 Feb 2026 11:02:39 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"href\": \"/\",\n        \"methods\": [\n            \"GET\"\n        ]\n    },\n    {\n        \"href\": \"/authors\",\n        \"querystrings\": [\n            \"limit\",\n            \"offset\",\n            \"order\"\n        ],\n        \"methods\": [\n            \"GET\",\n            \"POST\"\n        ]\n    },\n    {\n        \"href\": \"/authors/:id\",\n        \"methods\": [\n            \"GET\",\n            \"PATCH\",\n            \"DELETE\"\n        ]\n    },\n    {\n        \"href\": \"/news\",\n        \"querystrings\": [\n            \"limit\",\n            \"offset\",\n            \"order\",\n            \"published\",\n            \"authorId\"\n        ],\n        \"methods\": [\n            \"GET\",\n            \"POST\"\n        ]\n    },\n    {\n        \"href\": \"/news/:slug\",\n        \"methods\": [\n            \"GET\",\n            \"PATCH\",\n            \"DELETE\"\n        ]\n    }\n]"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
