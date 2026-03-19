@@ -10,33 +10,33 @@ async function main() {
 
   // Create authors
   const fridrik = await prisma.author.create({
-    data: { name: 'Friðrik Fréttaritari', email: 'fridrik@example.org' },
+    data: { name: 'Viktor', email: 'viktor@example.org' },
   });
   console.log(`Created author: ${fridrik.name}`);
 
   const fanney = await prisma.author.create({
-    data: { name: 'Frétta Fanney', email: 'fanney@example.net' },
+    data: { name: 'Alma', email: 'alma@example.net' },
   });
   console.log(`Created author: ${fanney.name}`);
 
   const ottar = await prisma.author.create({
-    data: { name: 'Æsifrétta Óttar', email: 'ottar@example.com' },
+    data: { name: 'Adda', email: 'adda@example.com' },
   });
   console.log(`Created author: ${ottar.name}`);
 
   const kata = await prisma.author.create({
-    data: { name: 'Kúltúrfrétta Kata', email: 'kata@example.org' },
+    data: { name: 'Nonni', email: 'nonni@example.org' },
   });
   console.log(`Created author: ${kata.name}`);
 
   await prisma.news.create({
     data: {
-      title: 'Lorem Ipsum Dolor Sit Amet',
-      slug: generateSlug('Lorem Ipsum Dolor Sit Amet'),
+      title: 'Ný frétt á forsíðu',
+      slug: generateSlug('Ný frétt á forsíðu'),
       intro:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
+        'Þetta er stutt inngangslýsing á frétt sem birtist á forsíðu vefsins.',
       content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'Þetta er lengri texti fréttarinnar. Hér gætu verið nánari upplýsingar um atburð, viðbrögð fólks og annað sem skiptir máli. Markmiðið er að hafa eðlilegan og læsilegan texta á íslensku í staðinn fyrir fyllitexta.',
       published: true,
       authorId: fridrik.id,
     },
@@ -44,12 +44,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Sit Amet',
-      slug: generateSlug('Sit Amet'),
+      title: 'Skemmtilegur dagur í bænum',
+      slug: generateSlug('Skemmtilegur dagur í bænum'),
       intro:
-        'Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
+        'Margir lögðu leið sína í miðbæinn og nutu dagsins í góðu veðri.',
       content:
-        'Sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'Það var líf og fjör í miðbænum í dag. Fólk sat á kaffihúsum, gekk um göturnar og naut þess að vera til. Verslanir voru vel sóttar og stemningin almennt mjög góð.',
       published: true,
       authorId: fridrik.id,
     },
@@ -57,12 +57,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Consectetur Adipiscing Elit',
-      slug: generateSlug('Consectetur Adipiscing Elit'),
+      title: 'Nýjungar kynntar í skólanum',
+      slug: generateSlug('Nýjungar kynntar í skólanum'),
       intro:
-        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+        'Nemendur fengu kynningu á nýjum lausnum sem eiga að bæta námið.',
       content:
-        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+        'Í dag voru kynntar ýmsar nýjungar í skólastarfinu. Þar má nefna bætt aðgengi að gögnum, ný námsverkfæri og skýrari utanumhald um verkefnaskil. Nemendur tóku kynningunni almennt vel.',
       published: true,
       authorId: fridrik.id,
     },
@@ -70,12 +70,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Adipiscing Elit',
-      slug: generateSlug('Adipiscing Elit'),
+      title: 'Mikil stemning fyrir helginni',
+      slug: generateSlug('Mikil stemning fyrir helginni'),
       intro:
-        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+        'Margir eru þegar farnir að skipuleggja helgina og hlakka til.',
       content:
-        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+        'Helgin nálgast og margir eru með stór plön. Sumir ætla að hitta vini, aðrir fara í ferðalög eða nýta tímann til að slaka á. Veðurspáin er ágæt og því ekkert sem ætti að stoppa góð plön.',
       published: true,
       authorId: fridrik.id,
     },
@@ -83,12 +83,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Quis Autem Vel Eum',
-      slug: generateSlug('Quis Autem Vel Eum'),
+      title: 'Nýtt námskeið í boði',
+      slug: generateSlug('Nýtt námskeið í boði'),
       intro:
-        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.',
+        'Á næstu vikum verður boðið upp á nýtt námskeið fyrir áhugasama.',
       content:
-        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.',
+        'Námskeiðið er ætlað þeim sem vilja bæta færni sína og kynnast nýjum aðferðum. Lögð verður áhersla á hagnýta vinnu, góð dæmi og verkefni sem nýtast í daglegu námi og starfi.',
       published: false,
       authorId: fanney.id,
     },
@@ -96,12 +96,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Temporibus Autem Quibusdam',
-      slug: generateSlug('Temporibus Autem Quibusdam'),
+      title: 'Mikilvægar breytingar framundan',
+      slug: generateSlug('Mikilvægar breytingar framundan'),
       intro:
-        'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.',
+        'Á næstunni taka gildi breytingar sem hafa áhrif á marga notendur.',
       content:
-        'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.',
+        'Unnið hefur verið að breytingunum í nokkurn tíma og markmiðið er að bæta þjónustu og einfalda ferla. Nánari upplýsingar verða birtar á næstu dögum svo allir geti undirbúið sig vel.',
       published: true,
       authorId: ottar.id,
     },
@@ -109,12 +109,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Hanc Ego Cum Teneam',
-      slug: generateSlug('Hanc Ego Cum Teneam'),
+      title: 'Viðtal við áhugaverðan gest',
+      slug: generateSlug('Viðtal við áhugaverðan gest'),
       intro:
-        'Sed ut tum ad senem senex de senectute, sic hoc libro ad amicum amicissimus scripsi de amicitia.',
+        'Gestur dagsins ræddi meðal annars um reynslu sína og framtíðaráform.',
       content:
-        'Hanc ego cum teneam sententiam, quid est cur verear, ne ad eam non possim accommodare Torquatos nostros? quos tu paulo ante cum memoriter, tum etiam erga nos amice et benivole collegisti, nec me tamen laudandis maioribus meis corrupisti nec segniorem ad respondendum reddidisti. Quorum facta quem ad modum, quaeso, interpretaris? sicine eos censes aut in armatum hostem impetum fecisse aut in liberos atque in sanguinem suum tam crudelis fuisse.',
+        'Í viðtalinu kom margt fróðlegt fram. Gesturinn fór yfir bakgrunn sinn, hvað hefur mótað hann og hvaða áskoranir hann hefur þurft að takast á við. Einnig var rætt um markmið og framtíðarsýn.',
       published: true,
       authorId: ottar.id,
     },
@@ -122,12 +122,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Nemo Enim Ipsam Voluptatem',
-      slug: generateSlug('Nemo Enim Ipsam Voluptatem'),
+      title: 'Ný opnun vekur athygli',
+      slug: generateSlug('Ný opnun vekur athygli'),
       intro:
-        'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.',
+        'Ný starfsemi hefur opnað og vakið jákvæð viðbrögð meðal gesta.',
       content:
-        'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.',
+        'Margir mættu á opnunina og lýstu ánægju með framtakið. Boðið var upp á kynningu, léttar veitingar og gott spjall. Eigendur segjast spenntir fyrir næstu skrefum.',
       published: true,
       authorId: kata.id,
     },
@@ -135,12 +135,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Vel Illum Qui Dolorem Eum',
-      slug: generateSlug('Vel Illum Qui Dolorem Eum'),
+      title: 'Verkefni seinkar lítillega',
+      slug: generateSlug('Verkefni seinkar lítillega'),
       intro:
-        'Fugiat quo voluptas nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+        'Seinkun hefur orðið á verkefni sem margir hafa beðið eftir.',
       content:
-        'Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi. Id est laborum et dolorum fuga et harum quidem rerum facilis est.',
+        'Samkvæmt upplýsingum frá ábyrgðaraðilum er um tímabundna seinkun að ræða. Unnið er að því að klára síðustu atriðin og stefnt er að því að ljúka verkinu eins fljótt og unnt er.',
       published: false,
       authorId: kata.id,
     },
@@ -148,12 +148,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Sed quia non numquam eius',
-      slug: generateSlug('Sed quia non numquam eius'),
+      title: 'Fleiri tækifæri í boði',
+      slug: generateSlug('Fleiri tækifæri í boði'),
       intro:
-        'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.',
+        'Áhersla verður lögð á að skapa fleiri tækifæri fyrir áhugasama.',
       content:
-        'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.',
+        'Undanfarin misseri hefur verið unnið að því að fjölga valkostum og bæta aðstöðu. Með þessum breytingum verður auðveldara fyrir fleiri að taka þátt og nýta sér það sem í boði er.',
       published: true,
       authorId: kata.id,
     },
@@ -161,12 +161,12 @@ async function main() {
 
   await prisma.news.create({
     data: {
-      title: 'Dolorem Eum',
-      slug: generateSlug('Dolorem Eum'),
+      title: 'Góður árangur skilar sér',
+      slug: generateSlug('Góður árangur skilar sér'),
       intro:
-        'Fugiat quo voluptas nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+        'Vinna síðustu vikna er farin að skila sér í betri niðurstöðum.',
       content:
-        'Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi. Id est laborum et dolorum fuga et harum quidem rerum facilis est.',
+        'Þeir sem hafa komið að verkefninu segja ánægjulegt að sjá framfarirnar. Samvinna hefur gengið vel og markviss vinna hefur leitt til betri árangurs en margir þorðu að vona.',
       published: false,
       authorId: kata.id,
     },
